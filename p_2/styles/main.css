@@ -4,13 +4,10 @@
 }
 
 .menu-object{
-	display:block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 300px;
-	height: 75px;
-	font-size: 16px;
-	margin-top: 10px;
+	display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 20px;
+    gap: 20px
 }
 
 p{
