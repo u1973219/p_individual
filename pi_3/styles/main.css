@@ -37,3 +37,71 @@ button.menu-object:hover:not(:active){
 	height: 85px;
 }
 
+#title{
+	font-size: 26px;
+	line-height: 75px;
+}
+
+.menu-object{
+	display: grid;
+    grid-template-columns: auto;
+	justify-content: center;
+	background-color: sandybrown;
+	width: 17%;
+	margin: 0 auto;
+	margin-bottom: 30px;
+
+}
+
+body{
+	background-color: papayawhip;
+}
+
+
+p{
+	text-align: center;
+}
+
+button.menu-object:active{
+	font-size: 18px;
+	width: 275px;
+	height: 70px;
+}
+
+button.menu-object:hover:not(:active){
+	font-size: 14px;
+	width: 325px;
+	height: 85px;
+}
+
+h2{
+
+	text-align: center;
+	width: 40em;
+	height: 2em;
+	border-style: solid;
+	padding:5px;
+	background-color: darkred;
+	display: inline-block;
+	color:black;
+	justify-content: center;
+	margin-left: 460px;
+	
+
+
+
+}
+
+#fondo{
+
+	background-color: papayawhip;
+
+
+}
+
+#imatges-joc{
+
+	margin-left: 750px;
+	margin-bottom: 60px;
+	margin-top: 60px;
+}
