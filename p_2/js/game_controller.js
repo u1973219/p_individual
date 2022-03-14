@@ -13,7 +13,7 @@ var item = {
 				if (c) {
 					alert("You win! Score: " 
 						+ (100 + items.length - c));
-					loadpage("../");
+					loadpage("../index.html");
 				}
 			}
 			else {
