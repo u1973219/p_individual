@@ -1,5 +1,5 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 	<head>
 		<link rel="stylesheet" href="../styles/main.css">
 		<script src="../js/loader.js"></script>
@@ -13,6 +13,7 @@
 				You WIN!!! with {{score_text}} points
 			</p>
 			<img v-else v-for="(card, indx) in current_card" :src="card.texture" v-on:click="clickCard(indx)">
+			<p v-on:click="mostraCarta()">a</p>
 		</div>
 		<a class="menu-object" href="../index.html">GoToMenu</a>
 	</body>

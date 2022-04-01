@@ -19,14 +19,26 @@ var game = new Vue({
 		this.items = this.items.concat(this.items); // Dupliquem els elements
 		this.items.sort(function(){return Math.random() - 0.5}); // Array aleatòria
 		for (var i = 0; i < this.items.length; i++){
-			this.current_card.push({done: false, texture: back});
+			this.current_card.push({done: true, texture: this.items[i]});
 		}
+
+
+
+
 	},
 	methods: {
+		mostraCarta: function(){
+		 for (var i = 0; i < this.items.length; i++){
+		   this.current_card =  [];
+		   this.current_card.push({done: false, texture: back});
+		 }
+
+	   },
 		clickCard: function(i){
 			if (!this.current_card[i].done && this.current_card[i].texture === back)
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
 		}
+
 	},
 	watch: {
 		current_card: function(value){
