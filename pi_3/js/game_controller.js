@@ -9,7 +9,10 @@ var game = new Vue({
 		current_card: [],
 		items: [],
 		num_cards: 2,
-		bad_clicks: 0
+		bad_clicks: 0,
+		dif: options.getDificulty()
+
+
 	},
 	created: function(){
 		this.username = sessionStorage.getItem("username","unknown");
@@ -24,7 +27,7 @@ var game = new Vue({
         setTimeout(() => {
 			this.current_card = [];
 			for (var i = 0; i < this.items.length; i++) {
-				this.current_card.push({done: false, texture: this.items[i]});
+				this.current_card.push({done: false, texture: back});
 			}
 		},2000);
 
@@ -63,9 +66,18 @@ var game = new Vue({
 			}
 		}
 	},
+
 	computed: {
 		score_text: function(){
-			return 100 - this.bad_clicks * 20;
+			if (this.dif === "easy") {
+				return 100 - this.bad_clicks * 20; //fins a 5 errors
+			}
+			else if (this.dif === "normal"){
+				return 100 - this.bad_clicks * 30; //fins a 4 errors
+			}
+			else{
+				return 100 - this.bad_clicks * 40;//fins a 3 errors
+			}
 		}
 	}
 });
