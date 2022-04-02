@@ -18,22 +18,20 @@ var game = new Vue({
 		this.items = this.items.slice(0, this.num_cards); // Agafem els primers numCards elements
 		this.items = this.items.concat(this.items); // Dupliquem els elements
 		this.items.sort(function(){return Math.random() - 0.5}); // Array aleatòria
-		for (var i = 0; i < this.items.length; i++){
+		for (var i = 0; i < this.items.length; i++) {
 			this.current_card.push({done: true, texture: this.items[i]});
 		}
-
+        setTimeout(() => {
+			this.current_card = [];
+			for (var i = 0; i < this.items.length; i++) {
+				this.current_card.push({done: false, texture: this.items[i]});
+			}
+		},2000);
 
 
 
 	},
 	methods: {
-		mostraCarta: function(){
-		 for (var i = 0; i < this.items.length; i++){
-		   this.current_card =  [];
-		   this.current_card.push({done: false, texture: back});
-		 }
-
-	   },
 		clickCard: function(i){
 			if (!this.current_card[i].done && this.current_card[i].texture === back)
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
@@ -41,30 +39,28 @@ var game = new Vue({
 
 	},
 	watch: {
-		current_card: function(value){
+		current_card: function(value) {
 			if (value.texture === back) return;
 			var front = null;
 			var i_front = -1;
-			for (var i = 0; i < this.current_card.length; i++){
-				if (!this.current_card[i].done && this.current_card[i].texture !== back){
-					if (front){
-						if (front.texture === this.current_card[i].texture){
+			for (var i = 0; i < this.current_card.length; i++) {
+				if (!this.current_card[i].done && this.current_card[i].texture !== back) {
+					if (front) {
+						if (front.texture === this.current_card[i].texture) {
 							front.done = this.current_card[i].done = true;
 							this.num_cards--;
-						}
-						else{
+						} else {
 							Vue.set(this.current_card, i, {done: false, texture: back});
 							Vue.set(this.current_card, i_front, {done: false, texture: back});
 							this.bad_clicks++;
 							break;
 						}
-					}
-					else{
+					} else {
 						front = this.current_card[i];
 						i_front = i;
 					}
 				}
-			}			
+			}
 		}
 	},
 	computed: {

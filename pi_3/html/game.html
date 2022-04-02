@@ -7,13 +7,12 @@
 	</head>
 	<body>
 		<div id="game_id">
-			<p class="menu-object" id="title">Is playing {{username}}</p>
+			<p class="menu-object" id="title" v>Is playing {{username}}</p>
 			<p class="menu-object" id="title" v-if="score_text <= 0"> You Lose </p>
 			<p class="menu-object" id="title" v-else-if="num_cards <= 0">
 				You WIN!!! with {{score_text}} points
 			</p>
 			<img v-else v-for="(card, indx) in current_card" :src="card.texture" v-on:click="clickCard(indx)">
-			<p v-on:click="mostraCarta()">a</p>
 		</div>
 		<a class="menu-object" href="../index.html">GoToMenu</a>
 	</body>
