@@ -7,17 +7,13 @@
 	display: grid;
     grid-template-columns: auto;
 	justify-content: center;
-	background-color: sandybrown;
+	background-color: floralwhite;
+	color: blueviolet;
 	width: 17%;
 	margin: 0 auto;
 	margin-bottom: 30px;
 
 }
-
-body{
-	background-color: papayawhip;
-}
-
 
 p{
 	text-align: center;
@@ -27,12 +23,15 @@ button.menu-object:active{
 	font-size: 18px;
 	width: 275px;
 	height: 70px;
+	background-color: black;
+	color: aliceblue;
 }
 
 button.menu-object:hover:not(:active){
 	font-size: 14px;
 	width: 325px;
 	height: 85px;
+	background-color: lightblue;
 }
 
 h2{
@@ -42,9 +41,9 @@ h2{
 	height: 2em;
 	border-style: solid;
 	padding:5px;
-	background-color: darkred;
+	background-color: azure;
+	color: blueviolet;
 	display: inline-block;
-	color:black;
 	justify-content: center;
 	margin-left: 460px;
 	
@@ -55,7 +54,7 @@ h2{
 
 #fondo{
 
-	background-color: papayawhip;
+	background-color: azure;
 
 
 }
