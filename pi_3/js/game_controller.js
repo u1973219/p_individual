@@ -2,29 +2,13 @@ const back = "../resources/back.png";
 const items = ["../resources/cb.png","../resources/co.png","../resources/sb.png",
 "../resources/so.png","../resources/tb.png","../resources/to.png"];
 
-
-var opt_data = {
-	cards:2, difficulty: "easy"
-}
-var load_opt = function(){
-	var json = localStorage.getItem("config");
-	if(json){
-		opt_data = JSON.parse(json);
-	}
-	else{
-		opt_data.cards = 2;
-		opt_data.difficulty = "easy";
-	}
-}
-load_opt();
-
 var game = new Vue({
 	el: "#game_id",
 	data: {
 		username:'',
 		current_card: [],
 		items: [],
-		num_cards: opt_data.cards,
+		num_cards: options.getNumOfCards(),
 		bad_clicks: 0,
 		dif: options.getDificulty()
 
